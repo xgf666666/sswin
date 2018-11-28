@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorGray"
+    android:layout_height="match_parent">
+    <include layout="@layout/item_toolbar"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+        <EditText
+            android:id="@+id/ed_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/sp_14"
+            android:maxLines="1"/>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/select_red_gray_btn_bg_r1000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        android:text="@string/tv_confirm"/>
+
+</LinearLayout>

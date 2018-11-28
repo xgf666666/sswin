@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/xia"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:src="@mipmap/my_launcher"/>
+    <ImageView
+        android:id="@+id/iv_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/bengjing"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/shang"/>
+    <RelativeLayout
+        android:layout_below="@+id/iv_center"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:background="@drawable/select_orange_gray_btn_bg_r1000"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/white"
+            android:text="@string/register"/>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:layout_toRightOf="@+id/btn_register"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/select_red_gray_btn_bg_r1000"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/white"
+            android:text="@string/tv_login"/>
+
+    </RelativeLayout>
+</RelativeLayout>

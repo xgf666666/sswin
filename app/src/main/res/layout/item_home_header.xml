@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            android:id="@+id/mBanner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@mipmap/zhaotwo"
+            app:canLoop="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/ll_search"
+                android:layout_width="match_parent"
+                android:layout_toStartOf="@+id/iv_massage_1"
+                android:layout_height="@dimen/searchHeight"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/bg_search"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/home_search" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search_hint"
+                    android:textColor="@color/gray_cc"
+                    android:textSize="@dimen/h7" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_massage_1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="19dp"
+                android:src="@mipmap/icon_meassage" />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/home_btn_recommendde" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/hot_classify"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h5" />
+
+        <TextView
+            android:id="@+id/tv_all_classify"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/all_classify"
+            android:textColor="#0a85f3"
+            android:textSize="@dimen/h5" />
+
+        <!--<com.micropole.usdmall.widgets.MarqueeView-->
+        <!--android:id="@+id/tv_activity"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:mvAnimDuration="1000"-->
+        <!--android:layout_marginEnd="10dp"-->
+        <!--app:mvDirection="bottom_to_top"-->
+        <!--app:mvInterval="5000"-->
+        <!--app:mvSingleLine="true"-->
+        <!--app:mvTextColor="@color/black"-->
+        <!--app:mvTextSize="@dimen/h7" />-->
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_classify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="20dp"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_home_vip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/hot_activity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h5" />
+
+        <!--<com.micropole.usdmall.widgets.MarqueeView-->
+        <!--android:id="@+id/tv_activity"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:mvAnimDuration="1000"-->
+        <!--android:layout_marginEnd="10dp"-->
+        <!--app:mvDirection="bottom_to_top"-->
+        <!--app:mvInterval="5000"-->
+        <!--app:mvSingleLine="true"-->
+        <!--app:mvTextColor="@color/black"-->
+        <!--app:mvTextSize="@dimen/h7" />-->
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/home_btn_whiteningrecommendation" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/recommend"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h5" />
+    </LinearLayout>
+
+</LinearLayout>

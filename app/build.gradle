@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.micropole.sxwine"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "e953ec00add12de944afbe7e", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$support_v7"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.DarkHorse-CN:PreferencesUtils:1.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation "com.android.support:design:$support_v7"
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation "com.android.support:cardview-v7:$support_v7"
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'com.blankj:utilcode:1.12.5'
+    //    implementation 'com.github.xiaoyanger0825:NiceVieoPlayer:v2.2'
+    //    implementation 'cn.jzvd:jiaozivideoplayer:6.3.1'
+    //jsoup
+    implementation 'org.jsoup:jsoup:1.10.1'
+    //braintree支付SDK
+    implementation 'com.braintreepayments.api:braintree:2.14.2'
+    implementation 'com.braintreepayments.api:drop-in:3.1.0'
+    //    androidTestImplementation 'com.google.android.gms:play-services-wallet:16.0.0'
+    //    implementation 'com.google.android.gms:play-services-wallet:16.0.0'
+    //微信支付SDK
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.1.6'
+    implementation('com.github.DarkHorse-CN:ViewIndicator:1.1.2') {
+        exclude group: 'com.android.support'
+    }
+    //tab
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    implementation project(':httphelper')
+    implementation project(':mvpframe')
+    implementation files('libs/core-3.2.1.jar')
+    implementation 'cn.jiguang.sdk:jpush:3.1.1'
+    // 此处以JPush 3.1.1 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.1.9'
+    // 此处以JCore 1.1.9 版本为例。
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation project(':MultipleImageSelect')
+    implementation 'com.shuyu:GSYVideoPlayer:6.0.0-beta'
+    implementation 'com.github.LoveJ2057:XxAnyPay:1.0.2'
+}
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'kotlin-android-extensions'

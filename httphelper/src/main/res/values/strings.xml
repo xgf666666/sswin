@@ -1,0 +1,4 @@
+<resources>
+    <string name="hint_retry">网络错误，请稍后重试</string>
+    <string name="hint_network_error">网络不给力，请检查网络设置</string>
+</resources>

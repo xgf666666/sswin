@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="ScreenTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+    <style name="SplashTheme2" parent="ScreenTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="WindowTranslucentStatusTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+
+</resources>

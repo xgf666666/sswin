@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="10dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:text="@string/sort_type1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h6" />
+
+        <ImageView
+            android:id="@+id/price_up"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toEndOf="@+id/tv_price"
+            android:src="@drawable/selector_up" />
+
+        <ImageView
+            android:id="@+id/price_down"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@+id/price_up"
+            android:layout_toEndOf="@+id/tv_price"
+            android:src="@drawable/selector_down" />
+
+        <TextView
+            android:id="@+id/tv_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="100dp"
+            android:layout_toEndOf="@+id/tv_price"
+            android:text="@string/sort_type2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h6" />
+
+        <ImageView
+            android:id="@+id/sale_up"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toEndOf="@+id/tv_sale"
+            android:src="@drawable/selector_up" />
+
+        <ImageView
+            android:id="@+id/sale_down"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@+id/sale_up"
+            android:layout_toEndOf="@+id/tv_sale"
+            android:src="@drawable/selector_down" />
+    </RelativeLayout>
+
+</LinearLayout>
