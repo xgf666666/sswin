@@ -54,7 +54,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/mine_btn_modify"/>
+            android:src="@mipmap/set_ic_pay"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/mine_btn_address"/>
+            android:src="@mipmap/set_ic_location"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/mine_btn_opinion"/>
+            android:src="@mipmap/set_ic_opinion"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/mine_btn_we"/>
+            android:src="@mipmap/set_ic_about"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

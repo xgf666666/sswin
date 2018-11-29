@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@mipmap/home_red_collection" android:state_pressed="true" />
-    <item android:drawable="@mipmap/home_red_collection" android:state_selected="true" />
-    <item android:drawable="@mipmap/home_btn_collection" />
+    <item android:drawable="@mipmap/details_btn_collect_s" android:state_pressed="true" />
+    <item android:drawable="@mipmap/details_btn_collect_s" android:state_selected="true" />
+    <item android:drawable="@mipmap/details_btn_collect_n" />
 </selector>

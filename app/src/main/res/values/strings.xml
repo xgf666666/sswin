@@ -55,7 +55,7 @@
     <string name="goodsPay">商品金额</string>
     <string name="goodsPay_buzhu">商品补助</string>
     <string name="carriage">运费</string>
-    <string name="carriage_buzhu">运费补助</string>
+    <string name="carriage_buzhu">运费/保险补助</string>
     <string name="edit">编辑</string>
     <string name="save">保存</string>
     <string name="tv_choices">全选</string>

@@ -140,7 +140,7 @@ class MineFragment : BaseMvpFragment<MineContract.Model, MineContract.View, Mine
     override fun onGetUserInfoSuccess(data: UserInfoEntity) {
         mActivity.hideLoadingDialog()
         mRootView.sw_mine.isRefreshing=false
-        mHeaderView.iv_avatar.loadImg(mContext,API.HOST+data.avatar,R.mipmap.toubu)
+        mHeaderView.iv_avatar.loadImg(mContext,API.HOST+data.avatar,R.mipmap.face_img)
         if (!TextUtils.isEmpty(data.nickname)){
             mHeaderView.tv_name.text=data.nickname
         }else{

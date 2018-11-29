@@ -38,7 +38,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/home_search" />
+                    android:src="@mipmap/global_ic_search" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -54,13 +54,13 @@
 
             <ImageView
                 android:id="@+id/iv_massage_1"
-                android:layout_width="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="37dp"
                 android:layout_marginStart="19dp"
-                android:src="@mipmap/icon_meassage" />
+                android:src="@mipmap/global_ic_notice" />
 
         </RelativeLayout>
 
@@ -78,7 +78,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:scaleType="fitCenter"
-            android:src="@mipmap/home_btn_recommendde" />
+            android:src="@mipmap/home_ic_hot" />
 
         <TextView
             android:layout_width="0dp"
@@ -133,7 +133,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:scaleType="fitCenter"
-            android:src="@mipmap/icon_home_vip" />
+            android:src="@mipmap/home_ic_vip" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:scaleType="fitCenter"
-            android:src="@mipmap/home_btn_whiteningrecommendation" />
+            android:src="@mipmap/home_ic_recommend" />
 
         <TextView
             android:layout_width="wrap_content"

@@ -40,7 +40,7 @@ class MainActivity : BaseActivity() {
      */
     private fun initAD() {
         val flag = intent.getStringExtra("flag")
-        if (!TextUtils.isEmpty(flag)){
+        if (!TextUtils.isEmpty(flag)) {
             val aDEntity = intent.getSerializableExtra("ADEntity") as ADEntity
             val type = aDEntity.type_id
             if (type == "2") {
@@ -52,7 +52,7 @@ class MainActivity : BaseActivity() {
                 intent.putExtra(WebViewActivity.EXTRA_WEB_TYPE, WebViewActivity.TYPE_URL)
                 intent.putExtra(WebViewActivity.EXTRA_WEB_URL, aDEntity.link)
                 startActivity(intent)
-            }else if(type == "3"){
+            } else if (type == "3") {
                 val intent = Intent(mContext, WebViewActivity::class.java)
                 intent.putExtra(WebViewActivity.EXTRA_WEB_TYPE, WebViewActivity.TYPE_CONTENT)
                 intent.putExtra(WebViewActivity.EXTRA_WEB_CONTENT, aDEntity.introduction)
@@ -72,12 +72,12 @@ class MainActivity : BaseActivity() {
         mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE)
         mBottomNavigationBar.activeColor = R.color.white
         mBottomNavigationBar.inActiveColor = R.color.tab_off
-        mBottomNavigationBar.setBarBackgroundColor(R.color.tab_on)
+        mBottomNavigationBar.setBarBackgroundColor(R.color.red)
 
-        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.home_label_btn_home, R.string.home_tab_1).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.home_home)))
-        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.home_label_btn_shareit, R.string.home_tab_2).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.home_share)))
-        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.home_label_btn_shoppingcart, R.string.home_tab_3).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.home_shopping_cart)))
-        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.home_label_btn_mine, R.string.home_tab_4).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.home_my)))
+        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.global_tab_ic_home_s, R.string.home_tab_1).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.global_tab_ic_home_n)))
+        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.global_tab_ic_share_s, R.string.home_tab_2).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.global_tab_ic_share_n)))
+        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.global_tab_ic_cart_s, R.string.home_tab_3).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.global_tab_ic_cart_n)))
+        mBottomNavigationBar.addItem(BottomNavigationItem(R.mipmap.global_tab_ic_user_s, R.string.home_tab_4).setInactiveIcon(ContextCompat.getDrawable(mContext, R.mipmap.global_tab_ic_user_n)))
 
         mBottomNavigationBar.initialise()
     }

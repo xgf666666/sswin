@@ -9,9 +9,10 @@ import com.example.baseframe.BaseApplication
 import com.example.baseframe.BuildConfig
 import com.micropole.sxwine.utils.network.API
 import com.micropole.sxwine.utils.network.MyConverter
+import com.xx.anypay.WxAppIDProvider
+import com.xx.anypay.XxAnyPay
 import okhttp3.logging.HttpLoggingInterceptor
 import org.json.JSONObject
-import java.util.*
 
 
 /**
@@ -34,22 +35,11 @@ class MyApplication : BaseApplication() {
 
         JPushInterface.setDebugMode(true)
         JPushInterface.init(this)
-
-//        val locale: Locale
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//            locale = resources.configuration.locales.get(0);
-//        } else {
-//            locale = resources.configuration.locale;
-//        }
-//        val lang: String
-//
-//        if (locale.language == "zh") {
-//            lang = "zh_cn"
-//        } else {
-//            lang = "en"
-//        }
-//
-//        PreferencesHelper.put("language", lang)
+        XxAnyPay.intance.init(this)
+        XxAnyPay.intance.wxAppIDProvider = object : WxAppIDProvider {
+            override val weChatAppID: String
+                get() = "wxe13c15b520e07f80"
+        }
     }
 
     private fun isTokenExpire(data: String): Boolean {
