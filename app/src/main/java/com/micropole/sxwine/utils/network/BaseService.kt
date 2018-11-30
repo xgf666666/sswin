@@ -214,6 +214,18 @@ interface BaseService {
     @POST("pay_order")
     @FormUrlEncoded
     fun payOrder(@Field("order_id") order_id: String, @Field("type") type: String): Observable<BaseResponseBean<PayResult>>
+ /**
+     * 支付宝确认支付
+     */
+    @POST("pay_order")
+    @FormUrlEncoded
+    fun awPayOrder(@Field("order_id") order_id: String, @Field("type") type: String): Observable<BaseResponseBean<AwPayBean>>
+    /**
+     * 微信确认支付
+     */
+    @POST("pay_order")
+    @FormUrlEncoded
+    fun wxPayOrder(@Field("order_id") order_id: String, @Field("type") type: String): Observable<BaseResponseBean<WxPayBean>>
 
     @POST("braintree_notify")
     @FormUrlEncoded

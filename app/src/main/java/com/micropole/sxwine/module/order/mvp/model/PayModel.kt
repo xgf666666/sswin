@@ -1,7 +1,9 @@
 package com.micropole.sxwine.module.order.mvp.model
 
 import com.darkhorse.httphelper.transformer.RxTransformer
+import com.micropole.sxwine.bean.AwPayBean
 import com.micropole.sxwine.bean.PayResult
+import com.micropole.sxwine.bean.WxPayBean
 import com.micropole.sxwine.module.order.mvp.contract.PayContract
 import com.micropole.sxwine.module.personal.Bean.CheckPayPwdEntity
 import com.micropole.sxwine.utils.network.API
@@ -12,6 +14,19 @@ import com.micropole.sxwine.utils.network.HttpObserver
  * Created by DarkHorse on 2018/6/15.
  */
 class PayModel : PayContract.Model {
+    override fun wxPay(order_id: String, type: String, httpObserver: HttpObserver<WxPayBean>) {
+        API.service.wxPayOrder(order_id,type)
+                .compose(RxTransformer.io_main())
+                .subscribe(httpObserver)
+    }
+
+    override fun awPay(order_id: String, type: String, httpObserver: HttpObserver<AwPayBean>) {
+        API.service.awPayOrder(order_id,type)
+                .compose(RxTransformer.io_main())
+                .subscribe(httpObserver)
+
+    }
+
     override fun balancePay(order_id: String, pay_password: String, httpObserver: HttpObserver<Any>) {
         API.service.balancePay(order_id,pay_password)
                 .compose(RxTransformer.io_main())

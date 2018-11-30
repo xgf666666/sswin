@@ -174,13 +174,14 @@ class OrderDetailsActivity : BaseMvpActivity<OrderDetailsContract.Model,OrderDet
                 mFooterView.btn_1.visibility=View.VISIBLE
             }
         }
-        mFooterView.tv_goods_total_price.text="RMB"+mData.goods_total_amount
-        mFooterView.tv_freight.text="RMB"+mData.delivery_amount
-        mFooterView.tv_order_total_price.text="RMB"+mData.order_amount
-        mFooterView.tv_true_pay.text="RMB"+mData.pay_amount
+        mFooterView.tv_goods_total_price.text="RMB "+mData.goods_total_amount
+        mFooterView.tv_freight.text="RMB "+mData.delivery_amount
+        mFooterView.tv_order_total_price.text="RMB "+mData.order_amount
+        mFooterView.tv_true_pay.text="RMB "+mData.pay_amount
         mFooterView.tv_order_code.text=mData.order_sn
         mFooterView.tv_create_time.text=TimeUtils.millis2String((mData.created_at+"000").toLong(),SimpleDateFormat(" yyyy-MM-dd HH:mm"))
         mFooterView.tv_logistics_order_code.text=mData.express_no
+        mFooterView.tv_buzhu.text="RMB "+mData.subsidy_price
 
     }
 

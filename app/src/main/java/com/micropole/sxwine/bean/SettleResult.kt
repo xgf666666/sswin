@@ -15,6 +15,7 @@ data class SettleResult(
     @SerializedName("cart") val cart: List<CarGoodsBean2>,
     @SerializedName("goods_total_amount") val goodsTotalAmount: String,
     @SerializedName("express_fee") val expressFee: String,
+    @SerializedName("subsidy_price") val subsidy_price: String,
     @SerializedName("order_amount") val orderAmount: String,
     @SerializedName("address") val address: AddressBean,
     @SerializedName("temp_id") val tempId: String

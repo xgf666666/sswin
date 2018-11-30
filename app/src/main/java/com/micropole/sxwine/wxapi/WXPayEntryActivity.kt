@@ -1,4 +1,4 @@
-package com.micropole.homeword.wxapi
+package com.micropole.sxwine.wxapi
 
 import com.xx.anypay.wxapi.WxPayEntryActivity
 

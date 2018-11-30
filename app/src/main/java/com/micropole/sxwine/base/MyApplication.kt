@@ -1,5 +1,6 @@
 package com.micropole.sxwine.base
 
+import android.util.Log
 import cn.jpush.android.api.JPushInterface
 import com.blankj.ALog
 import com.blankj.utilcode.util.Utils
@@ -9,6 +10,7 @@ import com.example.baseframe.BaseApplication
 import com.example.baseframe.BuildConfig
 import com.micropole.sxwine.utils.network.API
 import com.micropole.sxwine.utils.network.MyConverter
+import com.umeng.commonsdk.UMConfigure
 import com.xx.anypay.WxAppIDProvider
 import com.xx.anypay.XxAnyPay
 import okhttp3.logging.HttpLoggingInterceptor
@@ -36,6 +38,7 @@ class MyApplication : BaseApplication() {
         JPushInterface.setDebugMode(true)
         JPushInterface.init(this)
         XxAnyPay.intance.init(this)
+        Log.i("XxAnyPay", "wxe13c15b520e07f80")
         XxAnyPay.intance.wxAppIDProvider = object : WxAppIDProvider {
             override val weChatAppID: String
                 get() = "wxe13c15b520e07f80"

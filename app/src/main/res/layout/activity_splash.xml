@@ -3,4 +3,4 @@
            android:layout_width="match_parent"
            android:layout_height="match_parent"
            android:scaleType="centerCrop"
-           android:background="@mipmap/icon_sp1" />
+           android:background="@mipmap/default_we" />

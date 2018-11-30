@@ -41,6 +41,15 @@ public class OrderDetailsEntity {
     private List<ItemsBean> items;
     private String is_commented;
     private String self_pick;
+    private String subsidy_price;
+
+    public String getSubsidy_price() {
+        return subsidy_price;
+    }
+
+    public void setSubsidy_price(String subsidy_price) {
+        this.subsidy_price = subsidy_price;
+    }
 
     public String getSelf_pick() {
         return self_pick;

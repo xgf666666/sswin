@@ -96,9 +96,10 @@ class ConfirmActivity : BaseMvpActivity<ConfirmContract.Model, ConfirmContract.V
         mCarGoodsList.clear()
         mCarGoodsList.addAll(mResult!!.cart)
         mCarGoodsAdapter.setNewData(mCarGoodsList)
-        tv_carriage.text = "RMB" + mResult!!.expressFee
-        tv_money.text = "RMB" + mResult!!.orderAmount
-        tv_allPay.text = "RMB" + mResult!!.goodsTotalAmount
+        tv_carriage.text = "RMB " + mResult!!.expressFee
+        tv_money.text = "RMB " + mResult!!.orderAmount
+        tv_allPay.text = "RMB " + mResult!!.goodsTotalAmount
+        tv_carriage_buzhu.text= "RMB " + mResult!!.subsidy_price
 
         val address = mResult!!.address
         if (address.receiver != "") {

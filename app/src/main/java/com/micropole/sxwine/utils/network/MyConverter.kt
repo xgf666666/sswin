@@ -1,5 +1,6 @@
 package com.micropole.sxwine.utils.network
 
+import android.util.Log
 import com.blankj.utilcode.util.ActivityUtils.startActivity
 import com.darkhorse.httphelper.converter.BaseConvert
 import com.darkhorse.preferencesmanager.PreferencesHelper
@@ -45,6 +46,7 @@ class MyConverter : BaseConvert {
             }
             throw MyAPIException(state.toInt(), msg)
         } else if (BaseResponseBean.STATE_SUCCESS == state) {
+            Log.i("BaseResponseBean",originalBody)
             return adapter.fromJson(originalBody)
         }
         return adapter.fromJson(originalBody)

@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/my_launcher"
+        android:src="@mipmap/default_icon"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"/>
     <LinearLayout

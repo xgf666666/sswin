@@ -6,28 +6,100 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Parcelable
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import com.blankj.utilcode.util.EncryptUtils
 import com.braintreepayments.api.dropin.DropInActivity
 import com.braintreepayments.api.dropin.DropInRequest
 import com.braintreepayments.api.dropin.DropInResult
 import com.example.mvpframe.BaseMvpActivity
+import com.google.gson.Gson
 import com.micropole.tanglong.PayWebViewActivity
 import com.micropole.tanglong.WebViewActivity
 import com.micropole.sxwine.R
 import com.micropole.sxwine.R.id.*
 import com.micropole.sxwine.base.*
+import com.micropole.sxwine.bean.AwPayBean
 import com.micropole.sxwine.bean.PayResult
+import com.micropole.sxwine.bean.WxPayBean
+import com.micropole.sxwine.bean.Wxpay
 import com.micropole.sxwine.module.order.mvp.contract.PayContract
 import com.micropole.sxwine.module.order.mvp.presenter.PayPresenter
 import com.micropole.sxwine.module.personal.Bean.CheckPayPwdEntity
 import com.micropole.sxwine.module.personal.SettingPayPwdActivity
 import com.micropole.sxwine.widgets.InputPwdDialog
 import com.micropole.sxwine.widgets.MarqueeView
+import com.xx.anypay.XxAnyPay
+import com.xx.anypay.XxAnyPayResultCallBack
 import kotlinx.android.synthetic.main.activity_earnings_withcdraw2.*
 import kotlinx.android.synthetic.main.activity_pay.*
 
 class PayActivity : BaseMvpActivity<PayContract.Model, PayContract.View, PayPresenter>(), PayContract.View, View.OnClickListener {
+    override fun wxPaySuccess(data: WxPayBean) {
+        Log.i("toJson",Gson().toJson(data.data))
+        var datas=data.data
+        var wxPay=Wxpay()
+        wxPay.appId=datas.appid
+        wxPay.nonceStr=datas.noncestr
+        wxPay.packageX=datas.packageX
+        wxPay.partnerId=datas.partnerid
+        wxPay.sign=datas.sign
+        wxPay.timeStamp=datas.timestamp
+        wxPay.prepayId=datas.prepayid
+        XxAnyPay.intance.openWxPay(Gson().toJson(wxPay), object : XxAnyPayResultCallBack {
+        override fun onPayFiale(error: String) {
+            toast(error)
+            hideLoadingDialog()
+        }
+
+        override fun onPaySuccess() {
+            hideLoadingDialog()
+            toast("支付成功")
+            startActivity(CompletePay::class.java)
+        }
+    })
+
+//        XxAnyPay.intance.openAnyPay(if (payType==5) XxAnyPay.XXPAY_ALI else XxAnyPay.XXPAY_WX, Gson().toJson(data.data), object : XxAnyPayResultCallBack {
+//            override fun onPayFiale(error: String) {
+//                toast(error)
+//                hideLoadingDialog()
+//            }
+//
+//            override fun onPaySuccess() {
+//                hideLoadingDialog()
+//                toast("支付成功")
+//                startActivity(CompletePay::class.java)
+//            }
+//        })
+
+    }
+
+    override fun wxPayFailure(err: String) {
+        hideLoadingDialog()
+        toast(err)
+    }
+
+    override fun awPaySuccess(data: AwPayBean) {
+        Log.i("AwPayBean",data.data)
+        XxAnyPay.intance.openAnyPay(if (payType==5) XxAnyPay.XXPAY_ALI else XxAnyPay.XXPAY_WX, data.data, object : XxAnyPayResultCallBack {
+            override fun onPayFiale(error: String) {
+                toast(error)
+                hideLoadingDialog()
+            }
+
+            override fun onPaySuccess() {
+                hideLoadingDialog()
+                toast("支付成功")
+                startActivity(CompletePay::class.java)
+            }
+        })
+
+    }
+
+    override fun awPayFailure(err: String) {
+        hideLoadingDialog()
+        toast(err)
+    }
 
     override fun createPresenter(): PayPresenter = PayPresenter()
 
@@ -41,6 +113,7 @@ class PayActivity : BaseMvpActivity<PayContract.Model, PayContract.View, PayPres
         initToolBar(getString(R.string.pay))
         select(2)
         tv_sum_pay.text = "RM${getBundle()!!.getString("pay_amount")}"
+        XxAnyPay.intance.init(this)
     }
 
     override fun initListener() {
@@ -60,11 +133,14 @@ class PayActivity : BaseMvpActivity<PayContract.Model, PayContract.View, PayPres
     override fun onClick(v: View?) {
         when (v) {
             btn_confirm_pay -> {
+                showLoadingDialog()
                 when (payType) {
                     1 -> pay1()
                     2 -> pay2()
                     3 -> pay3()
                     4 -> pay4()
+                    5->awPay("alipay")
+                    6->wxPay("wxpay")
                 }
             }
             btn_pay_1 -> select(1)
@@ -161,6 +237,12 @@ class PayActivity : BaseMvpActivity<PayContract.Model, PayContract.View, PayPres
 
     fun pay4() {
         mPresenter.checkPayPwd()
+    }
+    fun awPay(type:String) {
+        mPresenter.awPay(mOrderId, type)
+    }
+    fun wxPay(type:String) {
+        mPresenter.wxPay(mOrderId, type)
     }
 
     override fun onSuccess(result: PayResult) {

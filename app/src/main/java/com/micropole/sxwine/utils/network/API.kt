@@ -12,7 +12,7 @@ import com.darkhorse.httphelper.HttpHelper
 object API {
     //    const val HOST = "http://test.catrongzi.com"
 //    const val HOST = "http://meibai.ljzchris.cn"
-    const val HOST = "http://api.180changes.com"
+    const val HOST = "http://sxj.goodbooy.cn"
     const val BASE_URL = "$HOST/api/"
     const val SUCCESS_STATUS = "1"
     const val TOKEN_SHORT = "apisign"

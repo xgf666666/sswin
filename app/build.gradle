@@ -38,6 +38,21 @@ android {
         // but continue the build even when errors are found:
         abortOnError false
     }
+    signingConfigs {
+        release {
+            keyAlias 'micro pole td'
+            keyPassword 'android'
+            storeFile file('MicroPoleTD.jks')
+            storePassword 'android'
+        }
+        debug {
+            keyAlias 'micro pole td'
+            keyPassword 'android'
+            storeFile file('MicroPoleTD.jks')
+            storePassword 'android'
+        }
+    }
+
 }
 
 dependencies {
@@ -69,7 +84,7 @@ dependencies {
     //    androidTestImplementation 'com.google.android.gms:play-services-wallet:16.0.0'
     //    implementation 'com.google.android.gms:play-services-wallet:16.0.0'
     //微信支付SDK
-    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.1.6'
+    //implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.1.6'
     implementation('com.github.DarkHorse-CN:ViewIndicator:1.1.2') {
         exclude group: 'com.android.support'
     }
@@ -86,6 +101,7 @@ dependencies {
     implementation project(':MultipleImageSelect')
     implementation 'com.shuyu:GSYVideoPlayer:6.0.0-beta'
     implementation 'com.github.LoveJ2057:XxAnyPay:1.0.2'
+    implementation 'com.umeng.sdk:share-wechat:latest.integration'
 }
 repositories {
     mavenCentral()
